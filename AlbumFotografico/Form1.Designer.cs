@@ -51,6 +51,9 @@ namespace AlbumFotografico
             this.label7 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCrear = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSubir = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbLugares = new System.Windows.Forms.ComboBox();
@@ -60,12 +63,36 @@ namespace AlbumFotografico
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabRead = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabUpdate = new System.Windows.Forms.TabPage();
+            this.btnCamActIm = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaAct = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnBuscarAct = new System.Windows.Forms.Button();
+            this.txtBuscarAct = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabDelete = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.picEli = new System.Windows.Forms.PictureBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnBusEli = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.Directorio.SuspendLayout();
             this.tabDirectorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDir)).BeginInit();
@@ -73,6 +100,12 @@ namespace AlbumFotografico
             this.tabControl1.SuspendLayout();
             this.tabCrear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabRead.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabUpdate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabDelete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEli)).BeginInit();
             this.SuspendLayout();
             // 
             // Directorio
@@ -297,6 +330,35 @@ namespace AlbumFotografico
             this.tabCrear.Text = "Crear";
             this.tabCrear.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(347, 264);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 42);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Guardar Evento";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(494, 178);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(194, 80);
+            this.textBox6.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(494, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 115);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSubir
             // 
             this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,6 +368,7 @@ namespace AlbumFotografico
             this.btnSubir.TabIndex = 7;
             this.btnSubir.Text = "Subir Imagen";
             this.btnSubir.UseVisualStyleBackColor = true;
+            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
             // 
             // label11
             // 
@@ -379,6 +442,7 @@ namespace AlbumFotografico
             // 
             // tabRead
             // 
+            this.tabRead.Controls.Add(this.dataGridView1);
             this.tabRead.Location = new System.Drawing.Point(4, 22);
             this.tabRead.Name = "tabRead";
             this.tabRead.Padding = new System.Windows.Forms.Padding(3);
@@ -387,8 +451,31 @@ namespace AlbumFotografico
             this.tabRead.Text = "Leer";
             this.tabRead.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(674, 275);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // tabUpdate
             // 
+            this.tabUpdate.Controls.Add(this.btnCamActIm);
+            this.tabUpdate.Controls.Add(this.btnEditar);
+            this.tabUpdate.Controls.Add(this.label16);
+            this.tabUpdate.Controls.Add(this.button3);
+            this.tabUpdate.Controls.Add(this.textBox8);
+            this.tabUpdate.Controls.Add(this.pictureBox2);
+            this.tabUpdate.Controls.Add(this.textBox7);
+            this.tabUpdate.Controls.Add(this.label15);
+            this.tabUpdate.Controls.Add(this.dateTimePicker2);
+            this.tabUpdate.Controls.Add(this.lblFechaAct);
+            this.tabUpdate.Controls.Add(this.label14);
+            this.tabUpdate.Controls.Add(this.label13);
+            this.tabUpdate.Controls.Add(this.btnBuscarAct);
+            this.tabUpdate.Controls.Add(this.txtBuscarAct);
+            this.tabUpdate.Controls.Add(this.label12);
             this.tabUpdate.Location = new System.Drawing.Point(4, 22);
             this.tabUpdate.Name = "tabUpdate";
             this.tabUpdate.Size = new System.Drawing.Size(720, 315);
@@ -396,8 +483,158 @@ namespace AlbumFotografico
             this.tabUpdate.Text = "Actualizar";
             this.tabUpdate.UseVisualStyleBackColor = true;
             // 
+            // btnCamActIm
+            // 
+            this.btnCamActIm.Location = new System.Drawing.Point(187, 218);
+            this.btnCamActIm.Name = "btnCamActIm";
+            this.btnCamActIm.Size = new System.Drawing.Size(104, 23);
+            this.btnCamActIm.TabIndex = 15;
+            this.btnCamActIm.Text = "Cambiar Imagen";
+            this.btnCamActIm.UseVisualStyleBackColor = true;
+            this.btnCamActIm.Click += new System.EventHandler(this.btnCamActIm_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(303, 248);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(92, 48);
+            this.btnEditar.TabIndex = 13;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(336, 176);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(119, 13);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Descripcion Imagen";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 14;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(339, 195);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(309, 47);
+            this.textBox8.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(45, 159);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(135, 83);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(339, 126);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(309, 47);
+            this.textBox7.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(45, 129);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 13);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Decripcion:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(448, 100);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 6;
+            // 
+            // lblFechaAct
+            // 
+            this.lblFechaAct.AutoSize = true;
+            this.lblFechaAct.Location = new System.Drawing.Point(157, 106);
+            this.lblFechaAct.Name = "lblFechaAct";
+            this.lblFechaAct.Size = new System.Drawing.Size(0, 13);
+            this.lblFechaAct.TabIndex = 5;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(336, 106);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(106, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Actualizar Fecha:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(45, 106);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Fecha Guardada:";
+            // 
+            // btnBuscarAct
+            // 
+            this.btnBuscarAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarAct.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarAct.Image")));
+            this.btnBuscarAct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarAct.Location = new System.Drawing.Point(601, 31);
+            this.btnBuscarAct.Name = "btnBuscarAct";
+            this.btnBuscarAct.Size = new System.Drawing.Size(91, 42);
+            this.btnBuscarAct.TabIndex = 2;
+            this.btnBuscarAct.Text = "Buscar";
+            this.btnBuscarAct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarAct.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscarAct
+            // 
+            this.txtBuscarAct.Location = new System.Drawing.Point(427, 43);
+            this.txtBuscarAct.Name = "txtBuscarAct";
+            this.txtBuscarAct.Size = new System.Drawing.Size(168, 20);
+            this.txtBuscarAct.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(41, 43);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(354, 20);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Ingrese Descripcion del Evento que desea Editar";
+            // 
             // tabDelete
             // 
+            this.tabDelete.Controls.Add(this.btnEliminar);
+            this.tabDelete.Controls.Add(this.label17);
+            this.tabDelete.Controls.Add(this.textBox9);
+            this.tabDelete.Controls.Add(this.picEli);
+            this.tabDelete.Controls.Add(this.textBox10);
+            this.tabDelete.Controls.Add(this.label18);
+            this.tabDelete.Controls.Add(this.dateTimePicker3);
+            this.tabDelete.Controls.Add(this.label19);
+            this.tabDelete.Controls.Add(this.btnBusEli);
+            this.tabDelete.Controls.Add(this.textBox11);
+            this.tabDelete.Controls.Add(this.label20);
             this.tabDelete.Location = new System.Drawing.Point(4, 22);
             this.tabDelete.Name = "tabDelete";
             this.tabDelete.Size = new System.Drawing.Size(720, 315);
@@ -409,33 +646,112 @@ namespace AlbumFotografico
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureBox1
+            // btnEliminar
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(494, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 115);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(297, 252);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(89, 48);
+            this.btnEliminar.TabIndex = 26;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // label17
             // 
-            this.textBox6.Location = new System.Drawing.Point(494, 178);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(194, 80);
-            this.textBox6.TabIndex = 9;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(330, 170);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(119, 13);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "Descripcion Imagen";
             // 
-            // button1
+            // textBox9
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(347, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 42);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Guardar Evento";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(333, 189);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(309, 47);
+            this.textBox9.TabIndex = 24;
+            // 
+            // picEli
+            // 
+            this.picEli.Location = new System.Drawing.Point(92, 139);
+            this.picEli.Name = "picEli";
+            this.picEli.Size = new System.Drawing.Size(165, 115);
+            this.picEli.TabIndex = 23;
+            this.picEli.TabStop = false;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Enabled = false;
+            this.textBox10.Location = new System.Drawing.Point(333, 120);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(309, 47);
+            this.textBox10.TabIndex = 22;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(39, 123);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 13);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "Decripcion:";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Enabled = false;
+            this.dateTimePicker3.Location = new System.Drawing.Point(333, 94);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(309, 20);
+            this.dateTimePicker3.TabIndex = 20;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(39, 100);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(105, 13);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Fecha Guardada:";
+            // 
+            // btnBusEli
+            // 
+            this.btnBusEli.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusEli.Image = ((System.Drawing.Image)(resources.GetObject("btnBusEli.Image")));
+            this.btnBusEli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusEli.Location = new System.Drawing.Point(595, 25);
+            this.btnBusEli.Name = "btnBusEli";
+            this.btnBusEli.Size = new System.Drawing.Size(91, 42);
+            this.btnBusEli.TabIndex = 18;
+            this.btnBusEli.Text = "Buscar";
+            this.btnBusEli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusEli.UseVisualStyleBackColor = true;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(421, 37);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(168, 20);
+            this.textBox11.TabIndex = 17;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(35, 37);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(368, 20);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Ingrese Descripcion del Evento que desea Eliminar";
             // 
             // Form1
             // 
@@ -454,6 +770,14 @@ namespace AlbumFotografico
             this.tabCrear.ResumeLayout(false);
             this.tabCrear.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabRead.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabUpdate.ResumeLayout(false);
+            this.tabUpdate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabDelete.ResumeLayout(false);
+            this.tabDelete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEli)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -496,6 +820,33 @@ namespace AlbumFotografico
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnBuscarAct;
+        private System.Windows.Forms.TextBox txtBuscarAct;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label lblFechaAct;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnCamActIm;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.PictureBox picEli;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnBusEli;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label20;
     }
 }
 

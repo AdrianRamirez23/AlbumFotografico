@@ -17,6 +17,33 @@ namespace AlbumFotografico
             InitializeComponent();
         }
 
+    
+        private void btnSubir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog1.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnCamActIm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog1.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
        
     }
 }
