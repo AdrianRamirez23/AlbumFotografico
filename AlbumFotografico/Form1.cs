@@ -16,5 +16,7 @@ namespace AlbumFotografico
         {
             InitializeComponent();
         }
+
+       
     }
 }
