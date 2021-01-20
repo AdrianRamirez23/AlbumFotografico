@@ -51,14 +51,14 @@ namespace AlbumFotografico
             this.label7 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCrear = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGuardarEve = new System.Windows.Forms.Button();
+            this.txtDescIm = new System.Windows.Forms.TextBox();
+            this.pcGuard = new System.Windows.Forms.PictureBox();
             this.btnSubir = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbLugares = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtDescLugGar = new System.Windows.Forms.TextBox();
+            this.datEvenGuar = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -81,7 +81,6 @@ namespace AlbumFotografico
             this.txtBuscarAct = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabDelete = new System.Windows.Forms.TabPage();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -93,13 +92,14 @@ namespace AlbumFotografico
             this.btnBusEli = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Directorio.SuspendLayout();
             this.tabDirectorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDir)).BeginInit();
             this.tabGestion.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCrear.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcGuard)).BeginInit();
             this.tabRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabUpdate.SuspendLayout();
@@ -311,14 +311,14 @@ namespace AlbumFotografico
             // 
             // tabCrear
             // 
-            this.tabCrear.Controls.Add(this.button1);
-            this.tabCrear.Controls.Add(this.textBox6);
-            this.tabCrear.Controls.Add(this.pictureBox1);
+            this.tabCrear.Controls.Add(this.btnGuardarEve);
+            this.tabCrear.Controls.Add(this.txtDescIm);
+            this.tabCrear.Controls.Add(this.pcGuard);
             this.tabCrear.Controls.Add(this.btnSubir);
             this.tabCrear.Controls.Add(this.label11);
             this.tabCrear.Controls.Add(this.cmbLugares);
-            this.tabCrear.Controls.Add(this.textBox5);
-            this.tabCrear.Controls.Add(this.dateTimePicker1);
+            this.tabCrear.Controls.Add(this.txtDescLugGar);
+            this.tabCrear.Controls.Add(this.datEvenGuar);
             this.tabCrear.Controls.Add(this.label10);
             this.tabCrear.Controls.Add(this.label9);
             this.tabCrear.Controls.Add(this.label8);
@@ -330,34 +330,36 @@ namespace AlbumFotografico
             this.tabCrear.Text = "Crear";
             this.tabCrear.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnGuardarEve
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(347, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 42);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Guardar Evento";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardarEve.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEve.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEve.Image")));
+            this.btnGuardarEve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarEve.Location = new System.Drawing.Point(347, 264);
+            this.btnGuardarEve.Name = "btnGuardarEve";
+            this.btnGuardarEve.Size = new System.Drawing.Size(153, 42);
+            this.btnGuardarEve.TabIndex = 10;
+            this.btnGuardarEve.Text = "Guardar Evento";
+            this.btnGuardarEve.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarEve.UseVisualStyleBackColor = true;
+            this.btnGuardarEve.Click += new System.EventHandler(this.btnGuardarEve_Click);
             // 
-            // textBox6
+            // txtDescIm
             // 
-            this.textBox6.Location = new System.Drawing.Point(494, 178);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(194, 80);
-            this.textBox6.TabIndex = 9;
+            this.txtDescIm.Location = new System.Drawing.Point(494, 178);
+            this.txtDescIm.Multiline = true;
+            this.txtDescIm.Name = "txtDescIm";
+            this.txtDescIm.Size = new System.Drawing.Size(194, 80);
+            this.txtDescIm.TabIndex = 9;
             // 
-            // pictureBox1
+            // pcGuard
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(494, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 115);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.pcGuard.Location = new System.Drawing.Point(494, 35);
+            this.pcGuard.Name = "pcGuard";
+            this.pcGuard.Size = new System.Drawing.Size(194, 115);
+            this.pcGuard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcGuard.TabIndex = 8;
+            this.pcGuard.TabStop = false;
             // 
             // btnSubir
             // 
@@ -395,20 +397,20 @@ namespace AlbumFotografico
             this.cmbLugares.TabIndex = 5;
             this.cmbLugares.Text = "Seleccione Lugar";
             // 
-            // textBox5
+            // txtDescLugGar
             // 
-            this.textBox5.Location = new System.Drawing.Point(258, 132);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 67);
-            this.textBox5.TabIndex = 4;
+            this.txtDescLugGar.Location = new System.Drawing.Point(258, 132);
+            this.txtDescLugGar.Multiline = true;
+            this.txtDescLugGar.Name = "txtDescLugGar";
+            this.txtDescLugGar.Size = new System.Drawing.Size(200, 67);
+            this.txtDescLugGar.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // datEvenGuar
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(258, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.datEvenGuar.Location = new System.Drawing.Point(258, 35);
+            this.datEvenGuar.Name = "datEvenGuar";
+            this.datEvenGuar.Size = new System.Drawing.Size(200, 20);
+            this.datEvenGuar.TabIndex = 3;
             // 
             // label10
             // 
@@ -642,10 +644,6 @@ namespace AlbumFotografico
             this.tabDelete.Text = "Eliminar";
             this.tabDelete.UseVisualStyleBackColor = true;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -753,6 +751,10 @@ namespace AlbumFotografico
             this.label20.TabIndex = 16;
             this.label20.Text = "Ingrese Descripcion del Evento que desea Eliminar";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,7 +762,7 @@ namespace AlbumFotografico
             this.ClientSize = new System.Drawing.Size(800, 411);
             this.Controls.Add(this.Directorio);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Directorio Telefónico";
             this.Directorio.ResumeLayout(false);
             this.tabDirectorio.ResumeLayout(false);
             this.tabDirectorio.PerformLayout();
@@ -769,7 +771,7 @@ namespace AlbumFotografico
             this.tabControl1.ResumeLayout(false);
             this.tabCrear.ResumeLayout(false);
             this.tabCrear.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcGuard)).EndInit();
             this.tabRead.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabUpdate.ResumeLayout(false);
@@ -808,18 +810,18 @@ namespace AlbumFotografico
         private System.Windows.Forms.TabPage tabRead;
         private System.Windows.Forms.TabPage tabUpdate;
         private System.Windows.Forms.TabPage tabDelete;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datEvenGuar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSubir;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbLugares;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDescLugGar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtDescIm;
+        private System.Windows.Forms.PictureBox pcGuard;
+        private System.Windows.Forms.Button btnGuardarEve;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnBuscarAct;

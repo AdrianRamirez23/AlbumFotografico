@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Directorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Directorio.Designer.cs">
+      <DependentUpon>Directorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Directorio.resx">
+      <DependentUpon>Directorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ImgAlbum\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlbumFotografico.Backend\AlbumFotografico.Backend.csproj">
+      <Project>{93a4f409-d103-4dbc-9399-b0218b329521}</Project>
+      <Name>AlbumFotografico.Backend</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
