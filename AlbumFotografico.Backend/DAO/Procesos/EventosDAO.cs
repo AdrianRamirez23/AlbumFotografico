@@ -114,6 +114,29 @@ namespace AlbumFotografico.Backend.DAO.Procesos
 
                 return e.Message;
             }
+        }
+        internal string EliminarEvento(string Descripcion)
+        {
+            try
+            {
+                string respuesta = null;
+                MySqlConnection con = new MySqlConnection(MYSQLCon);
+                MySqlCommand command = new MySqlCommand("call DirectorioTelefonico_Eventos_CRUD (4, NOW(),'','" + Descripcion + "','','')", con);
+                con.Open();
+
+                MySqlDataReader myRd = command.ExecuteReader();
+
+                while (myRd.Read())
+                {
+                    respuesta = myRd.GetString(0);
+                }
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+
+                return e.Message;
+            }
 
         }
     }

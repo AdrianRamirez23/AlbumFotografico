@@ -27,5 +27,9 @@ namespace AlbumFotografico.Backend.SERVICES
         {
             return new EventosBL().EditarrEventos(even);
         }
+        public string EliminarEventos(string Descripcion)
+        {
+            return new EventosBL().EliminarEventos(Descripcion);
+        }
     }
 }

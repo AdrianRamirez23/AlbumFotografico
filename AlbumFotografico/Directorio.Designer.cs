@@ -82,18 +82,20 @@ namespace AlbumFotografico
             this.tabDelete = new System.Windows.Forms.TabPage();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtDescrImEli = new System.Windows.Forms.TextBox();
             this.picEli = new System.Windows.Forms.PictureBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtDescLugEli = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dataTimeEli = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.btnBusEli = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtBusEli = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label21 = new System.Windows.Forms.Label();
             this.cmbLugarAct = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtLugEl = new System.Windows.Forms.TextBox();
             this.Directorio.SuspendLayout();
             this.tabDirectorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDir)).BeginInit();
@@ -624,16 +626,18 @@ namespace AlbumFotografico
             // 
             // tabDelete
             // 
+            this.tabDelete.Controls.Add(this.txtLugEl);
+            this.tabDelete.Controls.Add(this.label22);
             this.tabDelete.Controls.Add(this.btnEliminar);
             this.tabDelete.Controls.Add(this.label17);
-            this.tabDelete.Controls.Add(this.textBox9);
+            this.tabDelete.Controls.Add(this.txtDescrImEli);
             this.tabDelete.Controls.Add(this.picEli);
-            this.tabDelete.Controls.Add(this.textBox10);
+            this.tabDelete.Controls.Add(this.txtDescLugEli);
             this.tabDelete.Controls.Add(this.label18);
-            this.tabDelete.Controls.Add(this.dateTimePicker3);
+            this.tabDelete.Controls.Add(this.dataTimeEli);
             this.tabDelete.Controls.Add(this.label19);
             this.tabDelete.Controls.Add(this.btnBusEli);
-            this.tabDelete.Controls.Add(this.textBox11);
+            this.tabDelete.Controls.Add(this.txtBusEli);
             this.tabDelete.Controls.Add(this.label20);
             this.tabDelete.Location = new System.Drawing.Point(4, 22);
             this.tabDelete.Name = "tabDelete";
@@ -647,13 +651,14 @@ namespace AlbumFotografico
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(297, 252);
+            this.btnEliminar.Location = new System.Drawing.Point(333, 264);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(89, 48);
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label17
             // 
@@ -665,31 +670,32 @@ namespace AlbumFotografico
             this.label17.TabIndex = 25;
             this.label17.Text = "Descripcion Imagen";
             // 
-            // textBox9
+            // txtDescrImEli
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(333, 189);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(309, 47);
-            this.textBox9.TabIndex = 24;
+            this.txtDescrImEli.Enabled = false;
+            this.txtDescrImEli.Location = new System.Drawing.Point(333, 189);
+            this.txtDescrImEli.Multiline = true;
+            this.txtDescrImEli.Name = "txtDescrImEli";
+            this.txtDescrImEli.Size = new System.Drawing.Size(309, 47);
+            this.txtDescrImEli.TabIndex = 24;
             // 
             // picEli
             // 
-            this.picEli.Location = new System.Drawing.Point(92, 139);
+            this.picEli.Location = new System.Drawing.Point(42, 170);
             this.picEli.Name = "picEli";
             this.picEli.Size = new System.Drawing.Size(165, 115);
+            this.picEli.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEli.TabIndex = 23;
             this.picEli.TabStop = false;
             // 
-            // textBox10
+            // txtDescLugEli
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(333, 120);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(309, 47);
-            this.textBox10.TabIndex = 22;
+            this.txtDescLugEli.Enabled = false;
+            this.txtDescLugEli.Location = new System.Drawing.Point(333, 120);
+            this.txtDescLugEli.Multiline = true;
+            this.txtDescLugEli.Name = "txtDescLugEli";
+            this.txtDescLugEli.Size = new System.Drawing.Size(309, 47);
+            this.txtDescLugEli.TabIndex = 22;
             // 
             // label18
             // 
@@ -701,13 +707,13 @@ namespace AlbumFotografico
             this.label18.TabIndex = 21;
             this.label18.Text = "Decripcion:";
             // 
-            // dateTimePicker3
+            // dataTimeEli
             // 
-            this.dateTimePicker3.Enabled = false;
-            this.dateTimePicker3.Location = new System.Drawing.Point(333, 94);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(309, 20);
-            this.dateTimePicker3.TabIndex = 20;
+            this.dataTimeEli.Enabled = false;
+            this.dataTimeEli.Location = new System.Drawing.Point(333, 94);
+            this.dataTimeEli.Name = "dataTimeEli";
+            this.dataTimeEli.Size = new System.Drawing.Size(309, 20);
+            this.dataTimeEli.TabIndex = 20;
             // 
             // label19
             // 
@@ -731,13 +737,14 @@ namespace AlbumFotografico
             this.btnBusEli.Text = "Buscar";
             this.btnBusEli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBusEli.UseVisualStyleBackColor = true;
+            this.btnBusEli.Click += new System.EventHandler(this.btnBusEli_Click);
             // 
-            // textBox11
+            // txtBusEli
             // 
-            this.textBox11.Location = new System.Drawing.Point(421, 37);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(168, 20);
-            this.textBox11.TabIndex = 17;
+            this.txtBusEli.Location = new System.Drawing.Point(421, 37);
+            this.txtBusEli.Name = "txtBusEli";
+            this.txtBusEli.Size = new System.Drawing.Size(168, 20);
+            this.txtBusEli.TabIndex = 17;
             // 
             // label20
             // 
@@ -776,6 +783,23 @@ namespace AlbumFotografico
             this.cmbLugarAct.Name = "cmbLugarAct";
             this.cmbLugarAct.Size = new System.Drawing.Size(121, 21);
             this.cmbLugarAct.TabIndex = 17;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(39, 145);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(43, 13);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "Lugar:";
+            // 
+            // txtLugEl
+            // 
+            this.txtLugEl.Location = new System.Drawing.Point(210, 146);
+            this.txtLugEl.Name = "txtLugEl";
+            this.txtLugEl.Size = new System.Drawing.Size(117, 20);
+            this.txtLugEl.TabIndex = 28;
             // 
             // Form1
             // 
@@ -862,17 +886,19 @@ namespace AlbumFotografico
         private System.Windows.Forms.Button btnCamActIm;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtDescrImEli;
         private System.Windows.Forms.PictureBox picEli;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtDescLugEli;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dataTimeEli;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnBusEli;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtBusEli;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cmbLugarAct;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtLugEl;
+        private System.Windows.Forms.Label label22;
     }
 }
 

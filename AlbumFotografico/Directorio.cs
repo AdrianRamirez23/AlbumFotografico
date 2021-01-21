@@ -25,6 +25,10 @@ namespace AlbumFotografico
             llenarGrid();
             btnCamActIm.Visible = false;
             txtDesLugAct.Enabled = false;
+            txtDescLugEli.Enabled = false;
+            txtDescrImEli.Enabled = false;
+            txtLugEl.Enabled = false;
+            dataTimeEli.Enabled = false;
         }
 
         private void llenarGrid()
@@ -125,7 +129,7 @@ namespace AlbumFotografico
                 pcGuard.Image = null;
                 datEvenGuar.Value = DateTime.Now;
                 llenarGrid();
-
+                ImagenSCR = null;
             }
         }
 
@@ -222,6 +226,67 @@ namespace AlbumFotografico
                 datatimeAct.Value = DateTime.Now;
                 txtBuscarAct.Text = "";
                 llenarGrid();
+                ImagenBBDD = null;
+                ImagenSCR = null;
+            }
+        }
+
+        private void btnBusEli_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBusEli.Text == "")
+                {
+                    MessageBox.Show("Por favor Ingrese la descripcion del evento para editar", "!Alerta¡", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Eventos eve = new Eventos();
+                    eve = new Fachada().BuscarEventos(txtBuscarAct.Text.Trim());
+
+                    if (eve.lugarEvento == null)
+                    {
+                        MessageBox.Show("El Evento que buscas no existe", "!Alerta¡", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        dataTimeEli.Value = Convert.ToDateTime(eve.fechaEvento);
+                        picEli.Image = Image.FromFile(eve.dirImagen);
+                        txtDescrImEli.Text = eve.descripcionImagen;
+                        txtDescLugEli.Text = eve.descricpionLugarEvento;
+                        txtLugEl.Text = eve.lugarEvento;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "!Alerta¡", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string respuesta = new Fachada().EliminarEventos(txtDescLugEli.Text);
+                if (respuesta == "")
+                {
+                    MessageBox.Show(respuesta, "¡Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                dataTimeEli.Value = DateTime.Now;
+                picEli.Image = null;
+                txtDescrImEli.Text = string.Empty;
+                txtDescLugEli.Text = string.Empty;
+                txtLugEl.Text = string.Empty;
+                llenarGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "!Alerta¡", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

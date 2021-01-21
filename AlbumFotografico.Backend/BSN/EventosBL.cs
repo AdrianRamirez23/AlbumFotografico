@@ -27,5 +27,9 @@ namespace AlbumFotografico.Backend.BSN
         {
             return new EventosDAO().EditarEvento(even);
         }
+        internal string EliminarEventos(string Descripcion)
+        {
+            return new EventosDAO().EliminarEvento(Descripcion);
+        }
     }
 }
