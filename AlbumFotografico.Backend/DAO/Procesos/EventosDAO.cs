@@ -35,7 +35,6 @@ namespace AlbumFotografico.Backend.DAO.Procesos
 
                 return e.Message;
             }
-            
         }
 
         internal List<Eventos> ListaEventos()
@@ -63,6 +62,57 @@ namespace AlbumFotografico.Backend.DAO.Procesos
             catch (Exception)
             {
                 throw;
+            }
+
+        }
+
+        internal Eventos BuscarEvento(string Descripcion)
+        {
+            try
+            {
+                Eventos eve = new Eventos();
+                MySqlConnection con = new MySqlConnection(MYSQLCon);
+                MySqlCommand command = new MySqlCommand("call DirectorioTelefonico_Eventos_CRUD (5, NOW(),'','"+Descripcion+"','','');", con);
+                con.Open();
+                MySqlDataReader myRd = command.ExecuteReader();
+                while (myRd.Read())
+                {
+                    
+                    eve.fechaEvento = myRd.GetString(0);
+                    eve.lugarEvento = myRd.GetString(1);
+                    eve.descricpionLugarEvento = myRd.GetString(2);
+                    eve.descripcionImagen = myRd.GetString(3);
+                    eve.dirImagen = myRd.GetString(4);
+                }
+                return eve;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        internal string EditarEvento(Eventos even)
+        {
+            try
+            {
+                string respuesta = null;
+                MySqlConnection con = new MySqlConnection(MYSQLCon);
+                MySqlCommand command = new MySqlCommand("call DirectorioTelefonico_Eventos_CRUD (3, '" + even.fechaEvento + "','" + even.lugarEvento + "','" + even.descricpionLugarEvento + "','" + even.descripcionImagen + "','" + even.dirImagen + "')", con);
+                con.Open();
+
+                MySqlDataReader myRd = command.ExecuteReader();
+
+                while (myRd.Read())
+                {
+                    respuesta = myRd.GetString(0);
+                }
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+
+                return e.Message;
             }
 
         }

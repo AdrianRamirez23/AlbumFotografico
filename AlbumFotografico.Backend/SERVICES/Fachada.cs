@@ -19,5 +19,13 @@ namespace AlbumFotografico.Backend.SERVICES
         {
             return new EventosBL().ListaEventos();
         }
+        public Eventos BuscarEventos(string Descripcion)
+        {
+            return new EventosBL().BuscarEventos(Descripcion);
+        }
+        public string EditarEventos(Eventos even)
+        {
+            return new EventosBL().EditarrEventos(even);
+        }
     }
 }

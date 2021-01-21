@@ -19,5 +19,13 @@ namespace AlbumFotografico.Backend.BSN
         {
             return new EventosDAO().ListaEventos();
         }
+        internal Eventos BuscarEventos(string Descripcion)
+        {
+            return new EventosDAO().BuscarEvento(Descripcion);
+        }
+        internal string EditarrEventos(Eventos even)
+        {
+            return new EventosDAO().EditarEvento(even);
+        }
     }
 }
