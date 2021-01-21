@@ -29,6 +29,9 @@ namespace AlbumFotografico
             txtDescrImEli.Enabled = false;
             txtLugEl.Enabled = false;
             dataTimeEli.Enabled = false;
+            txtDesImDir.Enabled = false;
+            txtLugarDir.Enabled = false;
+            txtDesLugarDir.Enabled = false;
         }
 
         private void llenarGrid()
@@ -287,6 +290,56 @@ namespace AlbumFotografico
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "!Alerta¡", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBuscarDir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBusDir.Text == "")
+                {
+                    
+                }
+                else
+                {
+                    Eventos eve = new Eventos();
+
+                    eve = new Fachada().BuscarEventos(txtBusDir.Text.Trim());
+
+                    if (eve.lugarEvento == null)
+                    {
+                        MessageBox.Show("El evento que buscas no existe.", "!Alerta¡", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    { 
+                        EventoBuscar formBuscar = new EventoBuscar();
+
+                        formBuscar.txtFechEvn.Text = eve.fechaEvento;
+                        formBuscar.txtResDesEve.Text = eve.descricpionLugarEvento;
+
+                        DialogResult resul = new DialogResult();
+                        resul = formBuscar.ShowDialog();
+
+                        if (resul == DialogResult.OK)
+                        {
+                            txtDesImDir.Text = eve.descripcionImagen;
+                            picDir.Image = Image.FromFile(eve.dirImagen);
+                            txtDesLugarDir.Text = eve.descricpionLugarEvento;
+                            txtLugarDir.Text = eve.lugarEvento;
+                            txtEvenDir.Text = eve.lugarEvento;
+                        }
+                        
+                    }
+                    
+                    
+                }
+
+                
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }
