@@ -63,7 +63,7 @@ namespace AlbumFotografico
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabRead = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGriLeer = new System.Windows.Forms.DataGridView();
             this.tabUpdate = new System.Windows.Forms.TabPage();
             this.btnCamActIm = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -101,7 +101,7 @@ namespace AlbumFotografico
             this.tabCrear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcGuard)).BeginInit();
             this.tabRead.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGriLeer)).BeginInit();
             this.tabUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabDelete.SuspendLayout();
@@ -444,7 +444,7 @@ namespace AlbumFotografico
             // 
             // tabRead
             // 
-            this.tabRead.Controls.Add(this.dataGridView1);
+            this.tabRead.Controls.Add(this.dataGriLeer);
             this.tabRead.Location = new System.Drawing.Point(4, 22);
             this.tabRead.Name = "tabRead";
             this.tabRead.Padding = new System.Windows.Forms.Padding(3);
@@ -453,13 +453,13 @@ namespace AlbumFotografico
             this.tabRead.Text = "Leer";
             this.tabRead.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGriLeer
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(674, 275);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGriLeer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGriLeer.Location = new System.Drawing.Point(25, 23);
+            this.dataGriLeer.Name = "dataGriLeer";
+            this.dataGriLeer.Size = new System.Drawing.Size(674, 275);
+            this.dataGriLeer.TabIndex = 0;
             // 
             // tabUpdate
             // 
@@ -763,6 +763,7 @@ namespace AlbumFotografico
             this.Controls.Add(this.Directorio);
             this.Name = "Form1";
             this.Text = "Directorio Telefónico";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Directorio.ResumeLayout(false);
             this.tabDirectorio.ResumeLayout(false);
             this.tabDirectorio.PerformLayout();
@@ -773,7 +774,7 @@ namespace AlbumFotografico
             this.tabCrear.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcGuard)).EndInit();
             this.tabRead.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGriLeer)).EndInit();
             this.tabUpdate.ResumeLayout(false);
             this.tabUpdate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -822,7 +823,7 @@ namespace AlbumFotografico
         private System.Windows.Forms.TextBox txtDescIm;
         private System.Windows.Forms.PictureBox pcGuard;
         private System.Windows.Forms.Button btnGuardarEve;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGriLeer;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnBuscarAct;
         private System.Windows.Forms.TextBox txtBuscarAct;

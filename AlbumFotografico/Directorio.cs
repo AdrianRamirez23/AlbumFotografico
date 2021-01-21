@@ -16,11 +16,25 @@ namespace AlbumFotografico
     {
         public Form1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
         private string ImagenSCR;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            llenarGrid();
+        }
 
+        private void llenarGrid()
+        {
+            try
+            {
+                dataGriLeer.DataSource = new Fachada().ListarEventos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "¡Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void btnSubir_Click(object sender, EventArgs e)
         {
             try
@@ -82,10 +96,11 @@ namespace AlbumFotografico
                 string[] año = fechasDiv[2].Split(' ');
                 even.fechaEvento = año[0] + "-" + fechasDiv[1] + "-" + fechasDiv[0];
                 
-                even.lugarEvento = cmbLugares.SelectedText;
+                even.lugarEvento = cmbLugares.SelectedItem.ToString();
                 even.descricpionLugarEvento = txtDescLugGar.Text;
                 even.descripcionImagen = txtDescLugGar.Text;
-                even.dirImagen = ImagenSCR.Replace("//","\\");
+                string editImRut = ImagenSCR.Replace("\\","\\\\");
+                even.dirImagen = editImRut;
 
                 string respuesta = new Fachada().CrearEventos(even);
 
@@ -99,11 +114,14 @@ namespace AlbumFotografico
                 }
                 txtDescIm.Text = string.Empty;
                 txtDescLugGar.Text = string.Empty;
-                cmbLugares.SelectedIndex = 0;
+                cmbLugares.Text = "Seleccione Lugar";
                 pcGuard.Image = null;
-                
-                
+                datEvenGuar.Value = DateTime.Now;
+                llenarGrid();
+
             }
         }
+
+      
     }
 }
