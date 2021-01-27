@@ -188,7 +188,11 @@ namespace AlbumFotografico
             }else if (txtDesLugAct.Text.Length > 200)
             {
                 MessageBox.Show("La descripcion del lugar no puede exceder los 200 caracteres", "¡Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else
+            }else if (cmbLugarAct.Text==null)
+            {
+                MessageBox.Show("El lugar debe tener un valor válido", "¡Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 Eventos even = new Eventos();
                 string Fecha = datatimeAct.Value.ToString();
@@ -196,7 +200,7 @@ namespace AlbumFotografico
                 string[] año = fechasDiv[2].Split(' ');
                 even.fechaEvento = año[0] + "-" + fechasDiv[1] + "-" + fechasDiv[0];
 
-                even.lugarEvento = cmbLugarAct.SelectedItem.ToString();
+                even.lugarEvento = cmbLugarAct.Text.ToString();
                 even.descricpionLugarEvento = txtDesLugAct.Text;
                 even.descripcionImagen = txtDescImgAct.Text;
 
