@@ -331,7 +331,7 @@ namespace AlbumFotografico
                             picDir.Image = Image.FromFile(eve.dirImagen);
                             txtDesLugarDir.Text = eve.descricpionLugarEvento;
                             txtLugarDir.Text = eve.lugarEvento;
-                            txtEvenDir.Text = eve.lugarEvento;
+                            txtEvenDir.Text = eve.fechaEvento;
                         }
                         
                     }
